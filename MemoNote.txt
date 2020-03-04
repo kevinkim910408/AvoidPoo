@@ -1,0 +1,6 @@
+복사생성자가 일어날때-> performance가 구림
+1. value를 return 할때
+2. parameter로 value를 받을때
+3. 객체를 생성자로 받을때, 객체를 그대로 받을때*
+
+
