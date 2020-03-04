@@ -4,3 +4,24 @@
 3. 객체를 생성자로 받을때, 객체를 그대로 받을때*
 
 
+update(doble deltaTime)
+GEtEky W
+{
+chara.pos.x _+- 5 * deltaTime = 0.5 = 5
+}
+
+GEtEky W
+{
+chara.pos.x _ + -5 * deltaTime = 0.05 = 5
+}
+모두가 같은 프레임을 뽑는게 아니기 때문에
+
+
+surface 와 texture 차이
+- cpu가 다룸 - gpu가 다룸
+그래서 surface로 받은걸 texture
+
+SrcRect
+텍스쳐의 얼마큼을 그릴지
+DstRect
+캔버스, 즉 윈도우 어디에 그릴지
