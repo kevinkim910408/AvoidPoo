@@ -146,11 +146,20 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="CDropThings.cpp" />
     <ClCompile Include="CGame.cpp" />
+    <ClCompile Include="CObject.cpp" />
+    <ClCompile Include="CObjMgr.cpp" />
+    <ClCompile Include="CPlayer.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="CDropThings.h" />
     <ClInclude Include="CGame.h" />
+    <ClInclude Include="CObject.h" />
+    <ClInclude Include="CObjMgr.h" />
+    <ClInclude Include="CPlayer.h" />
+    <ClInclude Include="Enum.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

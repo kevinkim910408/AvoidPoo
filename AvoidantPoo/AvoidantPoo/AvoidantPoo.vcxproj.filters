@@ -5,16 +5,17 @@
       <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
       <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
     </Filter>
-    <Filter Include="Header Files">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
-    </Filter>
-    <Filter Include="Resource Files">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
-    </Filter>
     <Filter Include="00_CGAME">
       <UniqueIdentifier>{199c1c00-ce1d-41b3-8c4e-0e8a902c278d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01_Managers">
+      <UniqueIdentifier>{a38201fb-9e34-4fd8-9b67-c51dc51657aa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02_CObject">
+      <UniqueIdentifier>{f28eafa1-2627-441d-bf35-13269fe5f963}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="99_ENUM">
+      <UniqueIdentifier>{49abe7b4-79be-4878-9da2-8e07747f3515}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -24,10 +25,37 @@
     <ClCompile Include="CGame.cpp">
       <Filter>00_CGAME</Filter>
     </ClCompile>
+    <ClCompile Include="CObject.cpp">
+      <Filter>02_CObject</Filter>
+    </ClCompile>
+    <ClCompile Include="CPlayer.cpp">
+      <Filter>02_CObject</Filter>
+    </ClCompile>
+    <ClCompile Include="CDropThings.cpp">
+      <Filter>02_CObject</Filter>
+    </ClCompile>
+    <ClCompile Include="CObjMgr.cpp">
+      <Filter>01_Managers</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CGame.h">
       <Filter>00_CGAME</Filter>
+    </ClInclude>
+    <ClInclude Include="CObject.h">
+      <Filter>02_CObject</Filter>
+    </ClInclude>
+    <ClInclude Include="CPlayer.h">
+      <Filter>02_CObject</Filter>
+    </ClInclude>
+    <ClInclude Include="CDropThings.h">
+      <Filter>02_CObject</Filter>
+    </ClInclude>
+    <ClInclude Include="CObjMgr.h">
+      <Filter>01_Managers</Filter>
+    </ClInclude>
+    <ClInclude Include="Enum.h">
+      <Filter>99_ENUM</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

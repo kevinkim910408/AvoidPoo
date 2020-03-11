@@ -1,4 +1,5 @@
 ﻿#include "CGame.h"
+#include "CObjMgr.h"
 #include <iostream>
 
 using namespace std;
@@ -80,6 +81,16 @@ bool CGame::init()
 	}
 	SDL_FreeSurface(m_pSurface);
 
+	//objMgr 객체 생성
+	m_pObjMgr = new CObjMgr;
+
+	//생성된 객체를 오브젝트매니저에 넣어줌
+	//m_pObjMgr->addOBJ(NEW플레이어,OBJ_PLAYER)
+	//m_pObjMgr->addOBJ(똥,OBJ_PLAYER)
+	//m_pObjMgr->addOBJ(코인,OBJ_PLAYER)
+	//m_pObjMgr->addOBJ(버튼,OBJ_PLAYER)
+
+	m_pObjMgr->init();
 
 	return true;
 }
@@ -88,31 +99,33 @@ bool CGame::init()
 
 void CGame::update(double deltaTime)
 {
- 
+	m_pObjMgr->update(deltaTime);
 }
 
 void CGame::render()
 {
 	while (true)
-	{ 
+	{
 		//Back buffer에 지울 색을 정해주고, 지운다.
 		SDL_SetRenderDrawColor(m_pRenderer, 255, 255, 255, SDL_ALPHA_OPAQUE);
 		SDL_RenderClear(m_pRenderer);
 
-		//Back buffer에 그린다.
-		SDL_Rect m_srcRect;
-		m_srcRect.x = 0;
-		m_srcRect.y = 0;
-		m_srcRect.w = 95;
-		m_srcRect.h = 97;
-		
-		SDL_Rect m_dstRect;
-		m_dstRect.x = SCREEN_WIDTH *0.5;
-		m_dstRect.y = SCREEN_HEIGHT *0.5;
-		m_dstRect.w = 95;
-		m_dstRect.h = 97;
+		m_pObjMgr->render();
 
-		SDL_RenderCopy(m_pRenderer, m_pTexture, &m_srcRect, &m_dstRect);
+		////Back buffer에 그린다.
+		//SDL_Rect m_srcRect;
+		//m_srcRect.x = 0;
+		//m_srcRect.y = 0;
+		//m_srcRect.w = 95;
+		//m_srcRect.h = 97;
+
+		//SDL_Rect m_dstRect;
+		//m_dstRect.x = SCREEN_WIDTH * 0.5;
+		//m_dstRect.y = SCREEN_HEIGHT * 0.5;
+		//m_dstRect.w = 95;
+		//m_dstRect.h = 97;
+
+		//SDL_RenderCopy(m_pRenderer, m_pTexture, &m_srcRect, &m_dstRect);
 
 		//Back buffer를 앞으로 빼준다.
 		SDL_RenderPresent(m_pRenderer);
@@ -121,6 +134,8 @@ void CGame::render()
 
 void CGame::shutDown()
 {
+	m_pObjMgr->shutDown();
+
 	cout << "SYSTEM SHUT DOWN" << endl;
 	SDL_DestroyRenderer(m_pRenderer);
 	SDL_DestroyWindow(m_pWindow);

@@ -2,6 +2,8 @@
 
 int main(int argc, char* args[])
 {
+	
+
 	CGame GameInst;
 	bool bResult = GameInst.init();
 	if (bResult == true)

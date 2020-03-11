@@ -1,9 +1,10 @@
-#ifndef _CGAME_H_
+﻿#ifndef _CGAME_H_
 #define _CGAME_H_
 
 #include <SDL.h>
 #include <SDL_image.h>
 
+class CObjMgr; // 객체를 만들때가 아니니까 
 
 class CGame
 {
@@ -16,6 +17,8 @@ private:
 	SDL_Surface* m_pSurface = nullptr;
 	SDL_Texture* m_pTexture = nullptr;
 
+	CObjMgr* m_pObjMgr = nullptr;
+
 public:
 	bool init();
 	void update(double deltaTime);
@@ -24,4 +27,4 @@ public:
 };
 
 
-#endif
+#endif		
